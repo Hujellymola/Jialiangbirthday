@@ -255,42 +255,6 @@ const animationTimeline = () => {
         y: 30,
         zIndex: "-1",
     })
-    .staggerTo(
-        ".eight svg",
-        1.5, {
-            visibility: "visible",
-            opacity: 0,
-            scale: 80,
-            repeat: 3,
-            repeatDelay: 1.4,
-        },
-        0.3
-    )
-    .to(".six", 0.5, {
-        opacity: 0,
-        y: 30,
-        zIndex: "-1",
-    })
-    // Insert photo gallery animation here
-    .to(".photo-gallery", {
-        opacity: 1,
-        y: 0,
-        duration: 1
-    })
-    .from(".gallery-image", {
-        scale: 0,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 0.5,
-        ease: "back.out(1.7)"
-    })
-    .to(".photo-gallery", {
-        opacity: 0,
-        y: -40,
-        duration: 0.5,
-        delay: 2
-    })
-    // Then continue with the nine div animation
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
     .to(
         ".last-smile",
@@ -298,7 +262,7 @@ const animationTimeline = () => {
             rotation: 90,
         },
         "+=1"
-    )
+    );
 
     // Restart Animation on click
     const replyBtn = document.getElementById("replay");
