@@ -262,7 +262,35 @@ const animationTimeline = () => {
             rotation: 90,
         },
         "+=1"
-    );
+    )
+    .to(".eight", {
+        opacity: 0,
+        y: -40,
+        duration: 0.5
+    })
+    .to(".photo-gallery", {
+        opacity: 1,
+        y: 0,
+        duration: 1
+    })
+    .from(".gallery-image", {
+        scale: 0,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.5,
+        ease: "back.out(1.7)"
+    })
+    .to(".photo-gallery", {
+        opacity: 0,
+        y: -40,
+        duration: 0.5,
+        delay: 2
+    })
+    .to(".nine", {
+        opacity: 1,
+        y: 0,
+        duration: 1
+    });
 
     // Restart Animation on click
     const replyBtn = document.getElementById("replay");
