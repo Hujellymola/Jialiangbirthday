@@ -104,7 +104,7 @@ const animationTimeline = () => {
     .to(".fake-btn", 0.1, {
         backgroundColor: "rgb(127, 206, 248)",
     },
-    "+=4")
+    "+=1.5")
     .to(
         ".four",
         0.5, {
@@ -255,19 +255,23 @@ const animationTimeline = () => {
         y: 30,
         zIndex: "-1",
     })
-    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
-    .to(
-        ".last-smile",
-        0.5, {
-            rotation: 90,
+    .staggerTo(
+        ".eight svg",
+        1.5, {
+            visibility: "visible",
+            opacity: 0,
+            scale: 80,
+            repeat: 3,
+            repeatDelay: 1.4,
         },
-        "+=1"
+        0.3
     )
-    .to(".eight", {
+    .to(".six", 0.5, {
         opacity: 0,
-        y: -40,
-        duration: 0.5
+        y: 30,
+        zIndex: "-1",
     })
+    // Insert photo gallery animation here
     .to(".photo-gallery", {
         opacity: 1,
         y: 0,
@@ -286,11 +290,15 @@ const animationTimeline = () => {
         duration: 0.5,
         delay: 2
     })
-    .to(".nine", {
-        opacity: 1,
-        y: 0,
-        duration: 1
-    });
+    // Then continue with the nine div animation
+    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
+    .to(
+        ".last-smile",
+        0.5, {
+            rotation: 90,
+        },
+        "+=1"
+    )
 
     // Restart Animation on click
     const replyBtn = document.getElementById("replay");
