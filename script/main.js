@@ -245,7 +245,7 @@ const animationTimeline = () => {
             visibility: "visible",
             opacity: 0,
             scale: 80,
-            repeat: 3,
+            repeat: 2,
             repeatDelay: 1.4,
         },
         0.3
@@ -272,15 +272,6 @@ const animationTimeline = () => {
         scale: 0,
         rotation: 180,
         opacity: 0
-    }, 0.2)
-    .from(".final-photos", 1, {
-        opacity: 0,
-        scale: 0.5
-    })
-    .staggerFrom(".final-photo", 0.5, {
-        opacity: 0,
-        y: 50,
-        rotation: 10
     }, 0.2);
 
     // Restart Animation on click
