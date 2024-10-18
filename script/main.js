@@ -104,7 +104,7 @@ const animationTimeline = () => {
     .to(".fake-btn", 0.1, {
         backgroundColor: "rgb(127, 206, 248)",
     },
-    "+=1.5")
+    "+=4")
     .to(
         ".four",
         0.5, {
@@ -205,11 +205,14 @@ const animationTimeline = () => {
         opacity: 0,
     })
     .staggerFrom(
-        ".side-photo",
-        0.2, {
+        ".wish-hbd span",
+        0.7, {
             opacity: 0,
-            y: 30,
-            scale: 0.5
+            y: -50,
+            // scale: 0.3,
+            rotation: 150,
+            skewX: "30deg",
+            ease: Elastic.easeOut.config(1, 0.5),
         },
         0.1
     )
@@ -242,8 +245,8 @@ const animationTimeline = () => {
             visibility: "visible",
             opacity: 0,
             scale: 80,
-            repeat: 2,
-            repeatDelay: 1.4,
+            repeat: 1,
+            repeatDelay: 1.0,
         },
         0.3
     )
@@ -259,17 +262,7 @@ const animationTimeline = () => {
             rotation: 90,
         },
         "+=1"
-    )
-    .from(".photo-gallery", 1, {
-        opacity: 0,
-        y: 50,
-        stagger: 0.2
-    })
-    .staggerFrom(".memory-photo", 0.5, {
-        scale: 0,
-        rotation: 180,
-        opacity: 0
-    }, 0.2);
+    );
 
     // Restart Animation on click
     const replyBtn = document.getElementById("replay");
