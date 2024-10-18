@@ -205,14 +205,11 @@ const animationTimeline = () => {
         opacity: 0,
     })
     .staggerFrom(
-        ".wish-hbd span",
-        0.7, {
+        ".side-photo",
+        0.2, {
             opacity: 0,
-            y: -50,
-            // scale: 0.3,
-            rotation: 150,
-            skewX: "30deg",
-            ease: Elastic.easeOut.config(1, 0.5),
+            y: 30,
+            scale: 0.5
         },
         0.1
     )

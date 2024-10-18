@@ -334,3 +334,58 @@ body {
     align-items: center;
   }
 }
+
+/* Replace the .photo-strip styles with these new styles */
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.side-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-photo {
+  left: -120px;
+}
+
+.right-photo {
+  right: -120px;
+}
+
+/* Modify the .six img style to accommodate the new layout */
+.six .profile-picture {
+  display: inline-block;
+  height: 350px;
+  max-width: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+/* Add a media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .photo-container {
+    flex-direction: column;
+  }
+
+  .side-photo {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+  }
+
+  .left-photo, .right-photo {
+    left: auto;
+    right: auto;
+  }
+}
