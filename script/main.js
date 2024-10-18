@@ -262,7 +262,26 @@ const animationTimeline = () => {
             rotation: 90,
         },
         "+=1"
-    );
+    )
+    .from(".photo-gallery", 1, {
+        opacity: 0,
+        y: 50,
+        stagger: 0.2
+    })
+    .staggerFrom(".memory-photo", 0.5, {
+        scale: 0,
+        rotation: 180,
+        opacity: 0
+    }, 0.2)
+    .from(".final-photos", 1, {
+        opacity: 0,
+        scale: 0.5
+    })
+    .staggerFrom(".final-photo", 0.5, {
+        opacity: 0,
+        y: 50,
+        rotation: 10
+    }, 0.2);
 
     // Restart Animation on click
     const replyBtn = document.getElementById("replay");
